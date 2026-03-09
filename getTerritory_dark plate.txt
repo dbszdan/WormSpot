@@ -1,0 +1,61 @@
+macro "getTerritory"{
+
+dir = getDirectory("current")+"imagej_upload_here/";
+file = dir + "desktop.ini";
+
+if (File.exists(file)) {
+    File.delete(file);
+    print("Deleted:", file);
+} else {
+    print("File not found:", file);
+}
+
+
+
+
+directory=getDirectory("current")+"imagej_upload_here/";
+fileList=getFileList(directory);
+
+count=0;
+	while (count < fileList.length) {
+		print(count);
+		print(fileList[count]);
+		filePath = directory + fileList[count];
+		wait(2000);
+    		filePath = directory + fileList[count];
+    		open(filePath);
+  		run("Set Measurements...", "area perimeter redirect=None decimal=3");
+		imageName=getTitle();
+		selectWindow(imageName);
+		wait(50);
+		run("Smooth");
+		run("Rotate 90 Degrees Right");
+		setAutoThreshold("Mean dark");
+		run("Analyze Particles...", "size=90000-Infinity clear add");
+		nRoi=roiManager("count");
+            		for (i=0; i<nRoi; i++){
+                       			n=i+1;
+                        		roiManager("select", i);
+                          		selectWindow(imageName);
+                         		wait(50);
+				run("Duplicate...", " ");
+                          		Name1=getTitle();
+				selectWindow(Name1);
+				wait(50);
+				imageName1=imageName+"-"+toString(n);
+				saveAs("Tiff",getDirectory("current")+"/converted/"+imageName1);
+                                               	imageName1=getTitle();
+				selectWindow(imageName1);
+                                                wait(50);
+				run("Close");
+			}
+		selectWindow(imageName);
+		wait(50);
+		close();
+		selectWindow("ROI Manager");
+		wait(50);
+		run("Close");
+		wait(50);
+		count++;
+		}
+}
