@@ -3,4 +3,4 @@ The codes were used in Lee JGW, Ong VEY, and Zhang D*. WormSpot: a machine learn
 
 By analyzing static morphological features, WormSpot accurately classifies worm viability post-infection, achieving strong concordance with manual scoring while requiring minimal image input. It performs efficiently with diverse image formats and is compatible with standard multi-well microscopy workflows, enabling automated data analysis and scalable application in various experimental setups. 
 
-The complete code and running examples will be made publicly available after formal publication.
+The complete code and running samples will be made publicly available after formal publication.
