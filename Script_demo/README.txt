@@ -1,9 +1,11 @@
 last update: 6 May 2026
+# inputs should go in ./converted. to use, extract .zip file
+# demo output in ./detect/check
 
 ****BEFORE RUNNING SCRIPTS****
 - Download ImageJ v4.3.2 or later 
 - Make sure Python is installed on your desktop
-- Demo purposes: Extract files in ./converted
+
 
 ###### steps to run ############
 **if you do not need to crop images, upload images to ./imagej_upload_here in .tif format
