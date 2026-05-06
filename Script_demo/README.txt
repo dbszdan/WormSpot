@@ -3,6 +3,7 @@ last update: 8 Jan 2025
 ****BEFORE RUNNING SCRIPTS****
 - Download ImageJ v4.3.2 or later 
 - Make sure Python is installed on your desktop
+- Demo purposes: Extract files in ./converted
 
 ###### steps to run ############
 **if you do not need to crop images, upload images to ./imagej_upload_here in .tif format
@@ -13,7 +14,7 @@ To crop images:
 **Pocessed images output in ./converted
 
 
-To run script:
+To run script
 1. Open key.csv and edit the following:
                                   - date (e.g. 05012025, 06012025... etc)
                                   - group (e.g. CA10, CA11)
